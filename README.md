@@ -24,6 +24,15 @@ CivicSense is deployed on Amazon Web Services (AWS).
 - systemd – Automatic PM2 startup
 - AWS Security Groups – Network access control
 
+### CloudWatch Monitoring & Alarm
+
+- CPU utilization of the EC2 instance is monitored using Amazon CloudWatch.
+- A CloudWatch alarm `CivicSense-High-CPU-Alarm` is configured.
+- Alarm condition: CPUUtilization > 70%
+- Evaluation period: 5 minutes
+- SNS notification topic: `CivicSense-CPU-Alerts`
+- Current alarm state: OK
+
 ### Cloud Architecture
 
 ```text
